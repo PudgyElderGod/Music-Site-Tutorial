@@ -1,0 +1,18 @@
+<h4>
+    <a href="/artists">Return to all Artists</a>
+</h4>
+<h1>{{ artist.name }}</h1>
+<p> <strong>Bio:</strong> {{ artist.blurb }}</p>
+
+<h3 style="margin-bottom: -12px">Albums</h3>
+<ul>
+    {% for album in albums %}
+        <li>
+          <strong>Name:</strong> <a href="{% url 'album_info' album.id %}"> {{ album.title }} </a>
+          <br/>
+          <strong>Genre:</strong> {{ album.genre }}
+          <br/>
+          <strong>Date Released:</strong> {{ album.publish_date }}
+        </li>
+    {% endfor %}
+</ul>
